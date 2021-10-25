@@ -1,0 +1,29 @@
+.new-invoice {
+  padding: 15px; }
+  .new-invoice .invoice-form .invoice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .new-invoice .invoice-form .invoice-header .logo {
+      display: flex;
+      align-items: flex-end; }
+      .new-invoice .invoice-form .invoice-header .logo h4 {
+        margin: 0; }
+    .new-invoice .invoice-form .invoice-header .invoice-info h4 {
+      margin: 0; }
+    .new-invoice .invoice-form .invoice-header .invoice-info h4:last-child {
+      margin-top: 10px; }
+  .new-invoice .invoice-form .sender-receiver {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .new-invoice .invoice-form .form-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0; }
+  .new-invoice .invoice-form .form-table td, .new-invoice .invoice-form .form-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px; }
+
+/*# sourceMappingURL=invoice.css.map */

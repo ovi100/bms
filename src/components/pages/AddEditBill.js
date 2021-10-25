@@ -98,7 +98,7 @@ const AddEditBill = () => {
 
     console.log('New State', state);
 
-    if (flatNo.find(item => item.flat_no === state.flat_no)) {
+    if (flatNo.find(item => item.flat_no === state.flat_no) && !id) {
       toast.error('Flat already rented', {
         position: "top-right",
         autoClose: 3000,
@@ -168,6 +168,7 @@ const AddEditBill = () => {
                 <Grid item xs={12} sm={6} md={6}>
                   <TextField
                     fullWidth
+                    required
                     label="Renter Name"
                     variant="outlined"
                     name="name"
@@ -176,18 +177,33 @@ const AddEditBill = () => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <TextField
-                    fullWidth
-                    label="Flat No."
-                    variant="outlined"
-                    name="flat_no"
-                    value={flat_no || ""}
-                    onChange={inputChange}
-                  />
+                  {
+                    !id ?
+                      <TextField
+                        fullWidth
+                        required
+                        label="Flat No."
+                        variant="outlined"
+                        name="flat_no"
+                        value={flat_no.toUpperCase() || ""}
+                        onChange={inputChange}
+                      />
+                      :
+                      <TextField
+                        fullWidth
+                        disabled
+                        label="Flat No."
+                        variant="outlined"
+                        name="flat_no"
+                        value={flat_no || ""}
+                        onChange={inputChange}
+                      />
+                  }
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <TextField
                     fullWidth
+                    required
                     label="Present Unit"
                     variant="outlined"
                     name="present_unit"
@@ -198,6 +214,7 @@ const AddEditBill = () => {
                 <Grid item xs={12} sm={6} md={6}>
                   <TextField
                     fullWidth
+                    required
                     label="Previous Unit"
                     variant="outlined"
                     name="previous_unit"
@@ -208,6 +225,7 @@ const AddEditBill = () => {
                 <Grid item xs={12} sm={6} md={6}>
                   <TextField
                     fullWidth
+                    required
                     label="Unit Price"
                     variant="outlined"
                     name="unit_price"
@@ -220,8 +238,8 @@ const AddEditBill = () => {
                     <DatePicker
                       label="Select date"
                       value={date}
-                      onChange={(newValue) => {
-                        setDate(newValue);
+                      onChange={(newDate) => {
+                        setDate(newDate);
                       }}
                       renderInput={(params) => <TextField {...params} />}
                     />

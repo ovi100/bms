@@ -6,6 +6,7 @@
 .pnp.js
 /src/.sass-cache
 /src/components/navigation/.sass-cache
+/src/components/pages/.sass-cache
 
 # testing
 /coverage

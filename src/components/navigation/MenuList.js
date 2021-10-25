@@ -29,7 +29,7 @@ const MENU_LIST = [
     name: 'Bill',
     icon: ContentPasteIcon,
     children: [
-      { name: 'New Bill', url: '/add' },
+      { name: 'New Bill', url: '/add_bill' },
       { name: 'Bill List', url: '/bills' }
     ]
   },
@@ -42,7 +42,7 @@ const MENU_LIST = [
   {
     name: 'Invoice',
     icon: AssignmentIcon,
-    url: 'invoice',
+    url: 'invoices',
     children: []
   }
 ];
