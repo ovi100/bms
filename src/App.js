@@ -5,6 +5,7 @@ import AddEditBill from './components/pages/AddEditBill';
 import Bills from './components/pages/Bills';
 import Invoices from './components/pages/Invoices';
 import CreateInvoice from './components/pages/CreateInvoice';
+import ChartReport from './components/pages/ChartReport';
 import './style.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <Route  path="/bills" component={Bills}/>
               <Route  path="/invoices" component={Invoices}/>
               <Route  path="/create_invoice/:id" component={CreateInvoice}/>
+              <Route  path="/chart_report" component={ChartReport}/>
           </Switch>
       </Router>
     </>

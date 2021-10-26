@@ -36,7 +36,7 @@ const MENU_LIST = [
   {
     name: 'Chart Report',
     icon: BarChartIcon,
-    url: 'chart-report',
+    url: 'chart_report',
     children: []
   },
   {

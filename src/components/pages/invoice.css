@@ -26,4 +26,17 @@
     text-align: left;
     padding: 8px; }
 
+@media print {
+  .MuiAppBar-root {
+    display: none !important; }
+
+  .MuiDrawer-root {
+    display: none !important; }
+
+  .MuiPaper-root {
+    box-shadow: none !important; }
+
+  .pay-button {
+    display: none !important; } }
+
 /*# sourceMappingURL=invoice.css.map */
