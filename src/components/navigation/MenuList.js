@@ -36,13 +36,13 @@ const MENU_LIST = [
   {
     name: 'Chart Report',
     icon: BarChartIcon,
-    url: 'chart_report',
+    url: '/chart_report',
     children: []
   },
   {
     name: 'Invoice',
     icon: AssignmentIcon,
-    url: 'invoices',
+    url: '/invoices',
     children: []
   }
 ];

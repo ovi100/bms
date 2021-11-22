@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Navigation from '../navigation/Navigation';
-import HeaderMargin from '../navigation/HeaderMargin';
+import Navigation from '../../navigation/Navigation';
+import HeaderMargin from '../../navigation/HeaderMargin';
 import BillList from './BillList';
 
 const Bills = () => {

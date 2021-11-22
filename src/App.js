@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import Home from './components/pages/Home';
-import AddEditBill from './components/pages/AddEditBill';
-import Bills from './components/pages/Bills';
-import Invoices from './components/pages/Invoices';
-import CreateInvoice from './components/pages/CreateInvoice';
+import Home from './components/pages/home/Home';
+import AddEditBill from './components/pages/bill/AddEditBill';
+import Bills from './components/pages/bill/Bills';
+import Invoices from './components/pages/invoice/Invoices';
+import CreateInvoice from './components/pages/invoice/CreateInvoice';
 import ChartReport from './components/pages/ChartReport';
 import './style.css';
 

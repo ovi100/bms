@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-import dbRef from '../../firebase';
-import Navigation from '../navigation/Navigation';
-import HeaderMargin from '../navigation/HeaderMargin';
+import dbRef from '../../../firebase';
+import Navigation from '../../navigation/Navigation';
+import HeaderMargin from '../../navigation/HeaderMargin';
 import { Box, Paper, Grid, TextField, Button } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';

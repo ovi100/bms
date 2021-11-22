@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import dbRef from '../../firebase';
-import Navigation from '../navigation/Navigation';
-import HeaderMargin from '../navigation/HeaderMargin';
+import dbRef from '../../../firebase';
+import Navigation from '../../navigation/Navigation';
+import HeaderMargin from '../../navigation/HeaderMargin';
 import {
   Box, Paper, Button, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, TablePagination
 } from '@mui/material';

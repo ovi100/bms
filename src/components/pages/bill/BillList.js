@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import dbRef from '../../firebase';
-import HeaderMargin from '../navigation/HeaderMargin';
+import dbRef from '../../../firebase';
+import HeaderMargin from '../../navigation/HeaderMargin';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {

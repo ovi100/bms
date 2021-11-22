@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import dbRef from '../../firebase';
 import Navigation from '../navigation/Navigation';
 import HeaderMargin from '../navigation/HeaderMargin';
-import { Box, Grid, Paper, Typography } from '@mui/material';
-import { Pie } from 'react-chartjs-2';
+import { Box, Grid, Paper } from '@mui/material';
+import Chart from 'react-apexcharts'
 
 const ChartReport = () => {
-
   const [bills, setBills] = useState([]);
+  const [flats, setFlats] = useState([]);
+  const [flatsBill, setFlatsBill] = useState([]);
   const [totalBills, setTotalBills] = useState(0);
   const [dueBills, setDueBills] = useState(0);
   const [paidBills, setPaidBills] = useState(0);
@@ -33,7 +34,12 @@ const ChartReport = () => {
 
   // Calculating the bills
   useEffect(() => {
+
+    const flat_label = bills.map(bill => bill.flat_no);
+    setFlats(flat_label.sort());
+
     const total_arr = bills.map(bill => bill.total_bill);
+    setFlatsBill(total_arr);
     const total_sum = total_arr.reduce((a, b) => a + b, 0);
     setTotalBills(total_sum);
 
@@ -49,24 +55,69 @@ const ChartReport = () => {
 
   }, [bills]);
 
-  const data = {
-    labels: ['Total', 'Paid', 'Due'],
-    datasets: [
-      {
-        data: [totalBills, paidBills, dueBills],
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(255, 99, 132, 0.2)'
-        ],
-        borderColor: [
-          'rgba(54, 162, 235, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1,
+  console.log(flats);
+
+  // React Apex Pie Chart
+
+  const apexPie = {
+    series: [paidBills, dueBills],
+    options: {
+      chart: {
+        type: 'pie'
       },
-    ],
+      labels: ['Paid', 'Due', `Total Bills: ${totalBills} Tk`, 'Currency in Taka']
+    }
+  };
+
+  // React Apex Pie Chart
+
+  const apexColumn = {
+    series: [{
+      name: 'Bill',
+      data: flatsBill
+    }],
+    options: {
+      chart: {
+        type: 'bar'
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+          endingShape: 'rounded'
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: flats
+      },
+      yaxis: {
+        title: {
+          text: 'Tk (bill amounts)'
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return val + " Tk"
+          }
+        }
+      },
+      title: {
+        text: 'Bill by flat name',
+        position: 'bottom'
+      }
+    }
   };
 
   return (
@@ -77,22 +128,14 @@ const ChartReport = () => {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <HeaderMargin />
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={12} sm={6} md={6}>
               <Paper elevation={2} sx={{ p: 2 }}>
-                <Typography variant="h5" gutterBottom component="div">
-                  Bill Status(React Chart Js 2)
-                </Typography>
-                <Pie data={data} />
+                <Chart options={apexPie.options} series={apexPie.series} type="pie" width={675} />
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={12} sm={6} md={6}>
               <Paper elevation={2} sx={{ p: 2 }}>
-
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <Paper elevation={2} sx={{ p: 2 }}>
-
+                <Chart options={apexColumn.options} series={apexColumn.series} type="bar" />
               </Paper>
             </Grid>
           </Grid>

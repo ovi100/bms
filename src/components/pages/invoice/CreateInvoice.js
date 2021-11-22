@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import dbRef from '../../firebase';
+import dbRef from '../../../firebase';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Navigation from '../navigation/Navigation';
-import HeaderMargin from '../navigation/HeaderMargin';
+import Navigation from '../../navigation/Navigation';
+import HeaderMargin from '../../navigation/HeaderMargin';
 import { Box, Paper, Button, Radio, RadioGroup, FormControlLabel, FormControl } from '@mui/material';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import PrintIcon from '@mui/icons-material/Print';

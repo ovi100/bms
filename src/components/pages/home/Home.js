@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Navigation from '../navigation/Navigation';
+import Navigation from '../../navigation/Navigation';
 import HomeContent from './HomeContent';
 
 
