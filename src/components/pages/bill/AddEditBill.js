@@ -87,8 +87,8 @@ const AddEditBill = () => {
     e.preventDefault();
 
     const new_date = new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-    const unit_used = parseInt(present_unit) - parseInt(previous_unit);
-    const total_bill = parseInt(unit_used) * parseInt(unit_price);
+    const unit_used = parseFloat(present_unit) - parseFloat(previous_unit);
+    const total_bill = parseFloat(unit_used) * parseFloat(unit_price);
 
     state = Object.assign(state, {
       date: new_date,

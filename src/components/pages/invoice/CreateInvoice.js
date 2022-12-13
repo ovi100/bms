@@ -120,7 +120,7 @@ const CreateInvoice = () => {
                         <td>Present Units</td>
                         <td>{present_unit}</td>
                         <td rowSpan="2">{unit_used}</td>
-                        <td rowSpan="2">{unit_used} x 7 = {total_bill}</td>
+                        <td rowSpan="2">{unit_used} x 10 = {total_bill}</td>
                       </tr>
                       <tr>
                         <td>Previous Units</td>

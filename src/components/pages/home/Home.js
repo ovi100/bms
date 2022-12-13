@@ -6,12 +6,12 @@ import HomeContent from './HomeContent';
 
 const Home = () => {
 
-    return (
-        <Box sx={{ display: 'flex' }}>
-            <Navigation />
-            <HomeContent />
-        </Box>
-    );
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <Navigation />
+      <HomeContent />
+    </Box>
+  );
 }
 
 export default Home;
